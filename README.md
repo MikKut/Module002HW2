@@ -1,8 +1,8 @@
 ## Module002HW2
-#Task:
+# Task:
 - Make a purchase in the online store.
 
-#Criteria:
+# Criteria:
 - Get an array of some goods;
 - Select several products for purchase from the array (up to 10 items) and add them to the shopping cart;
 - The shopping cart stores the products until the order is placed;
