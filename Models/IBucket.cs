@@ -1,4 +1,6 @@
-﻿namespace ShopPurchaising.Models
+﻿using System;
+
+namespace ShopPurchaising.Models
 {
     /// <summary>
     /// Represents a bucket for shopping.
@@ -6,8 +8,11 @@
     internal interface IBucket
     {
         /// <summary>
-        /// Gets quantity of products in the bucket.
+        /// Gets quantity of _products in the bucket.
         /// </summary>
+        /// <value>
+        /// Quantity of products in the bucket.
+        /// </value>
         public int QuantityOfProducts { get; }
 
         /// <summary>

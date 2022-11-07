@@ -8,15 +8,15 @@
     internal class OrderMaker
     {
         private static int indexOfBucket = 0;
-        private readonly IProduct[] products;
+        private readonly IProduct[] _products;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="OrderMaker"/> class.
         /// </summary>
-        /// <param name="products">All products for the bucket. Does not accept nulls.</param>
+        /// <param name="products">All _products for the bucket. Does not accept nulls.</param>
         public OrderMaker(IProduct[] products)
         {
-            this.products = products;
+            _products = products;
         }
 
         /// <summary>
@@ -24,7 +24,7 @@
         /// </summary>
         public void MakeOrder()
         {
-            BucketCreator bucketCreator = new BucketCreator(this.products);
+            BucketCreator bucketCreator = new BucketCreator(_products);
             var bucket = bucketCreator.FormBucket();
             if (bucket.QuantityOfProducts != 0)
             {

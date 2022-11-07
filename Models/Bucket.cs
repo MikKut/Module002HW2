@@ -9,7 +9,7 @@
         /// Shows bucket size.
         /// </summary>
         public const int BusketSize = 10;
-        private IProduct[] products;
+        private IProduct[] _products;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Bucket"/> class.
@@ -17,14 +17,14 @@
         /// </summary>
         public Bucket()
         {
-            this.products = new IProduct[BusketSize];
+            _products = new IProduct[BusketSize];
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Bucket"/> class.
         /// </summary>
         /// <param name="products">Products of the bucket.</param>
-        /// <param name="quantityOfProducts">Quantity of products.</param>
+        /// <param name="quantityOfProducts">Quantity of _products.</param>
         public Bucket(IProduct[] products, int quantityOfProducts)
         {
             if (products.Length > 10)
@@ -32,13 +32,16 @@
                 throw new Exception("Too much _products in the bucket");
             }
 
-            this.products = products;
-            this.QuantityOfProducts = quantityOfProducts;
+            _products = products;
+            QuantityOfProducts = quantityOfProducts;
         }
 
         /// <summary>
-        /// Gets quantity of products in the bucket.
+        /// Gets quantity of _products in the bucket.
         /// </summary>
+        /// <value>
+        /// Quantity of products in the bucket.
+        /// </value>
         public int QuantityOfProducts { get; private set; }
 
         /// <summary>
@@ -48,12 +51,12 @@
         /// <returns>In case there is more than <see cref="QuantityOfProducts"> return false. </returns>.
         public bool AddProduct(IProduct product)
         {
-            if (this.QuantityOfProducts == BusketSize)
+            if (QuantityOfProducts == BusketSize)
             {
                 return false;
             }
 
-            this.products[this.QuantityOfProducts++] = product;
+            _products[QuantityOfProducts++] = product;
             return true;
         }
     }

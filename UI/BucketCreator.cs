@@ -9,15 +9,15 @@ namespace ShopPurchaising.UI
     {
         private const string PositiveAnswer = "Yes";
         private const string NegativeAnswer = "No";
-        private IProduct[] products;
+        private IProduct[] _products;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BucketCreator"/> class.
         /// </summary>
-        /// <param name="products">Array of all products in system.</param>
+        /// <param name="products">Array of all _products in system.</param>
         public BucketCreator(IProduct[] products)
         {
-            this.products = products;
+            _products = products;
         }
 
         /// <summary>
@@ -27,9 +27,9 @@ namespace ShopPurchaising.UI
         public IBucket FormBucket()
         {
             IBucket bucket = new Bucket();
-            for (int i = 0; i < this.products.Length; i++)
+            for (int i = 0; i < _products.Length; i++)
             {
-                if (!AskAboutPuttingTheProductIntoTheBucketAndPutIt(ref bucket, this.products[i]))
+                if (!AskAboutPuttingTheProductIntoTheBucketAndPutIt(ref bucket, _products[i]))
                 {
                     Console.WriteLine("You cannot add more _products in the bucket: Bucket is full!");
                     break;
